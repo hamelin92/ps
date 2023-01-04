@@ -1,7 +1,7 @@
 def solution(food_times, k):
     removed = [0]*len(food_times)
-    enumd = list(enumerate(food_times, start=0))
-    enum = sorted(enumd, key=lambda x: x[1], reverse=True)
+    enum = list(enumerate(food_times, start=0))
+    enum.sort(key=lambda x: x[1], reverse=True)
     const = 0
     while enum and (enum[-1][1]-const)*len(enum) <= k:
         last = enum.pop()
