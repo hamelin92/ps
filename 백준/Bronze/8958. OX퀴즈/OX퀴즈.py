@@ -1,11 +1,8 @@
 t = int(input())
 for tc in range(t):
-    bonus = 1
     score = 0
-    for w in input():
-        if w == "O":
-            score += bonus
-            bonus += 1
-        else:
-            bonus = 1
+    result = input().split("X")
+    for o in result:
+        l = len(o)
+        score += l*(l+1)//2
     print(score)
