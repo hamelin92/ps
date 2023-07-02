@@ -1,6 +1,8 @@
 import sys
 
-N=int(sys.stdin.readline().rstrip())
+input = sys.stdin.readline
+
+N=int(input().rstrip())
 
 trie={}
 
@@ -63,7 +65,7 @@ def return_max(val):
 insert('0'.zfill(31))
 
 for _ in range(N):
-    a,b= map(int,sys.stdin.readline().rstrip().split())
+    a,b= map(int, input().rstrip().split())
     binary = format(b,'b').zfill(31)
     if a==1:
         insert(binary)
