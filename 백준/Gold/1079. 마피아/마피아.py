@@ -6,6 +6,8 @@ max_nights = 0
 
 def possible_game(days:int, lived: set, guilty_now: list):
     global max_nights, me
+    if N//2 == max_nights:
+        return
     if days > max_nights:
         max_nights = days
     if len(lived)%2:
