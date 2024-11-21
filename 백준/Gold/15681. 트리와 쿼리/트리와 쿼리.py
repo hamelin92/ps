@@ -1,11 +1,11 @@
-from collections import defaultdict
 import sys
 
 sys.setrecursionlimit(1000000)
 
 N, R, Q = map(int, sys.stdin.readline().split())
 subnodes = [1]*(N+1)
-tree = defaultdict(list)
+tree = [[] for _ in range(N+1)]
+
 for _ in range(1, N):
     u, v = map(int, sys.stdin.readline().split())
     tree[u].append(v)
