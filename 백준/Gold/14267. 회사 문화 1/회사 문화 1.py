@@ -1,18 +1,16 @@
 import sys
 
-input = sys.stdin.readline
+input = lambda: sys.stdin.readline().rstrip()
 
 n, m = map(int, input().split())
+num = list(map(int, input().split()))
+points = [0]*(n)
 
-parent = [0] + list(map(int, input().split()))
-point = [0] * (n + 1)
+for _ in range(m):
+    i, w = map(int, input().split())
+    points[i-1] += w
 
-for i in range(m):
-    u, cnt = map(int, input().split())
-    point[u] += cnt 
+for i in range(1, n):
+    points[i] += points[num[i]-1]
 
-for i in range(2, n+1):
-    point[i] += point[parent[i]]
-    
-for i in range(1, len(point)):            
-    print(point[i], end = ' ')
+print(*points)
