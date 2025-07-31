@@ -7,11 +7,12 @@ nums = list(map(int, input().split()))
 M = int(input())
 dp = [[0]*N for _ in range(N)]
 
-for i in range(N):
-    dp[i][i] = 1
+dp[N-1][N-1] = 1
 for i in range(N-1):
+     dp[i][i] = 1
      if nums[i] == nums[i+1]:
         dp[i][i+1] = 1
+
 
 for l in range(2, N):
     for s in range(N-l):
